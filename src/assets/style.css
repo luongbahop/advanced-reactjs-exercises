@@ -16,6 +16,7 @@ a {
   color: #0ce3ac;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #1ce3ac;
 }
@@ -43,9 +44,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #0ce3ac;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -63,14 +66,37 @@ button:focus-visible {
   padding: 15px;
 }
 
+
+.ok-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.input {
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  font-family: inherit;
+  min-width: 300px;
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #0ce3ac;
   }
+
   button {
     background-color: #f9f9f9;
   }
