@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useLocalStorageContext } from "../../../contexts/LocalStorageContext";
 
 const SetValueComponent: React.FC = () => {
-  const { getItem } = useLocalStorageContext();
-  const [storedValue, setValue, removeValue] = getItem<string>("my_key", "");
+  const { handleStorage } = useLocalStorageContext();
+  const [storedValue, setValue, removeValue] = handleStorage<string>(
+    "my_key",
+    ""
+  );
   const [inputValue, setInputValue] = useState(storedValue);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +29,7 @@ const SetValueComponent: React.FC = () => {
         value={inputValue}
         onChange={handleChange}
         style={{ marginRight: "5px" }}
+        placeholder="Enter value"
       />
       <button
         className="ok-btn"

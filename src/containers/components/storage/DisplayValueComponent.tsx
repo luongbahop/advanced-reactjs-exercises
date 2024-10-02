@@ -2,8 +2,8 @@ import React from "react";
 import { useLocalStorageContext } from "../../../contexts/LocalStorageContext";
 
 const DisplayValueComponent: React.FC = () => {
-  const { getItem } = useLocalStorageContext();
-  const [storedValue] = getItem<string>("my_key", "");
+  const { handleStorage } = useLocalStorageContext();
+  const [storedValue] = handleStorage<string>("my_key", "");
 
   if (!storedValue) {
     return null;
