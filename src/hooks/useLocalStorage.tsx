@@ -19,6 +19,7 @@ const useLocalStorage = <T,>(key: string, initialValue: T) => {
         setStoredValue(valueToStore);
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
         window.dispatchEvent(new Event("localStorageChange"));
+        console.log("localStorageChange set: ", key, valueToStore);
       } catch (error) {
         console.error(error);
       }

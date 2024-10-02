@@ -16,6 +16,13 @@ const SetValueComponent: React.FC = () => {
   const handleSetValue = () => {
     setValue(inputValue);
   };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      handleSetValue();
+    }
+  };
+
   const handleRemove = () => {
     removeValue();
     setInputValue("");
@@ -28,6 +35,7 @@ const SetValueComponent: React.FC = () => {
         type="text"
         value={inputValue}
         onChange={handleChange}
+        onKeyDown={handleKeyPress}
         style={{ marginRight: "5px" }}
         placeholder="Enter value"
       />
