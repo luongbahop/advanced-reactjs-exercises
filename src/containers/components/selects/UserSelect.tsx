@@ -26,7 +26,7 @@ const UserSelect: React.FC = () => {
           <AutoFilterDropdown<User>
             value={selectedUser}
             data={users}
-            filterKey={"name"}
+            filterKey={"username"}
             valueChange={handleUserChange}
           />
         </div>
